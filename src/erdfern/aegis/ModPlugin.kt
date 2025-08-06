@@ -1,16 +1,16 @@
 package erdfern.aegis
 
 import com.fs.starfarer.api.BaseModPlugin
+import lunalib.lunaSettings.LunaSettings
 import org.apache.log4j.Logger
-import org.lazywizard.lazylib.ext.logging.d
-import org.lazywizard.lazylib.VectorUtils
+import org.lazywizard.lazylib.ext.logging.*
 
 class ModPlugin : BaseModPlugin() {
     @Throws(Exception::class)
     override fun onApplicationLoad() {
         super.onApplicationLoad()
 
-        Logger.getLogger("a").d({ "Hi" })
+        Logger.getLogger("a").i({ LunaSettings.getString("erdfern_aegis", "lunaExampleString").toString() })
         // Test that the .jar is loaded and working, using the most obnoxious way possible.
 //        throw RuntimeException("Template mod loaded and working!\nRemove this crash in TemplateModPlugin.")
     }
